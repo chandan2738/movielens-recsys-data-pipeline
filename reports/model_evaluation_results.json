@@ -1,0 +1,42 @@
+{
+  "evaluated_at_utc": "2026-11-11T07:14:19.329204+00:00",
+  "primary_k": 10,
+  "relevance_threshold": 4.0,
+  "test_rows": 20381,
+  "results": [
+    {
+      "model": "Baseline Popularity",
+      "rmse": 1.0991,
+      "mae": 0.887,
+      "evaluated_users_for_ranking": 908,
+      "precision_at_5": 0.0718,
+      "recall_at_5": 0.0313,
+      "ndcg_at_5": 0.0795,
+      "coverage_at_5": 0.0256,
+      "diversity_at_5": 0.6833,
+      "precision_at_10": 0.065,
+      "recall_at_10": 0.0554,
+      "ndcg_at_10": 0.0792,
+      "coverage_at_10": 0.0392,
+      "diversity_at_10": 0.7127,
+      "primary_k": 10
+    },
+    {
+      "model": "Hybrid Personalized SVD",
+      "rmse": 0.9703,
+      "mae": 0.769,
+      "evaluated_users_for_ranking": 908,
+      "precision_at_5": 0.1482,
+      "recall_at_5": 0.0858,
+      "ndcg_at_5": 0.1685,
+      "coverage_at_5": 0.1332,
+      "diversity_at_5": 0.5743,
+      "precision_at_10": 0.1239,
+      "recall_at_10": 0.136,
+      "ndcg_at_10": 0.1675,
+      "coverage_at_10": 0.1718,
+      "diversity_at_10": 0.594,
+      "primary_k": 10
+    }
+  ]
+}

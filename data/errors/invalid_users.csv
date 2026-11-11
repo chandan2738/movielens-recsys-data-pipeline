@@ -1,0 +1,5 @@
+user_id,age,gender,occupation,zip_code,error_code,error_reason
+,28,M,engineer,10001,MISSING_FIELD,Null user_id/age/gender/occupation
+1.0,24,M,technician,85711,DUPLICATE_PK,Duplicate user_id
+9901.0,twenty,F,student,94105,INVALID_TYPE,Non-integer user_id or age
+9902.0,165,X,artist,30301,DOMAIN_VIOLATION,"Age outside [5, 110] or invalid gender"

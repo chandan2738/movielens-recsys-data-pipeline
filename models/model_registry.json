@@ -1,0 +1,33 @@
+{
+  "trained_at_utc": "2026-11-11T07:14:18.876287+00:00",
+  "mlflow_tracking_uri": "sqlite:///models/mlflow.db",
+  "mlflow_experiment_id": "1",
+  "mlflow_experiment_name": "movielens-100k-recommender",
+  "models": {
+    "baseline_popularity": {
+      "run_id": "0b8bd62c18664c939838ec5f28b7ed8f",
+      "artifact_path": "models/popularity_recommender.pkl",
+      "train_duration_sec": 0.0182,
+      "params": {
+        "bayesian_m": 25.0,
+        "popularity_weight": 0.15
+      }
+    },
+    "personalized_hybrid_svd": {
+      "run_id": "1fb88c8fcec84bb887bea56d4ea62faf",
+      "artifact_path": "models/hybrid_svd_recommender.pkl",
+      "train_duration_sec": 1.1391,
+      "final_train_rmse": 0.8194,
+      "params": {
+        "n_factors": 16,
+        "n_epochs": 20,
+        "reg": 18.0,
+        "bias_reg": 6.0,
+        "implicit_svd_factors": 24,
+        "explicit_weight": 0.15,
+        "implicit_weight": 0.75,
+        "genre_weight": 0.1
+      }
+    }
+  }
+}

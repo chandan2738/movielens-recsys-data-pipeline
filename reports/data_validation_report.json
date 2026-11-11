@@ -1,0 +1,54 @@
+{
+  "validated_at_utc": "2026-11-11T07:14:15.668160+00:00",
+  "gate_status": "PASSED",
+  "max_error_rate_pct": 5.0,
+  "entities": {
+    "users": {
+      "raw_rows": 947,
+      "clean_rows": 943,
+      "quarantined_rows": 4,
+      "error_rate_pct": 0.4224,
+      "checks": {
+        "missing_required_fields": 1,
+        "invalid_data_types": 1,
+        "domain_range_violations": 1,
+        "duplicate_primary_keys": 1
+      }
+    },
+    "items": {
+      "raw_rows": 1685,
+      "clean_rows": 1682,
+      "quarantined_rows": 3,
+      "error_rate_pct": 0.178,
+      "checks": {
+        "missing_required_fields": 1,
+        "invalid_data_types": 1,
+        "duplicate_primary_keys": 1
+      }
+    },
+    "interactions": {
+      "raw_rows": 100010,
+      "clean_rows": 100000,
+      "quarantined_rows": 10,
+      "error_rate_pct": 0.01,
+      "checks": {
+        "missing_required_fields": 2,
+        "invalid_data_types": 1,
+        "invalid_ratings": 2,
+        "invalid_timestamps": 2,
+        "referential_integrity_violations": 2,
+        "duplicate_interactions": 1
+      }
+    }
+  },
+  "pandera_contracts": {
+    "users_schema": "PASSED (4 column contracts, PK uniqueness)",
+    "items_schema": "PASSED (3 column contracts, PK uniqueness)",
+    "interactions_schema": "PASSED (4 column contracts, composite PK & FK integrity)"
+  },
+  "source_null_audit": {
+    "items_release_date_nulls": 1,
+    "items_video_release_date_nulls": 1682,
+    "items_imdb_url_nulls": 3
+  }
+}

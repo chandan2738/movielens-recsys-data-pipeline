@@ -1,0 +1,4 @@
+item_id,title,release_date,video_release_date,imdb_url,genre_unknown,genre_action,genre_adventure,genre_animation,genre_childrens,genre_comedy,genre_crime,genre_documentary,genre_drama,genre_fantasy,genre_film_noir,genre_horror,genre_musical,genre_mystery,genre_romance,genre_sci_fi,genre_thriller,genre_war,genre_western,genres,error_code,error_reason
+99001,,01-Jan-1996,,http://example.com/missing,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unknown,MISSING_FIELD,Null item_id or empty title
+1,Toy Story (1995),01-Jan-1995,,http://us.imdb.com/M/title-exact?Toy%20Story%20(1995),0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Animation|Childrens|Comedy,DUPLICATE_PK,Duplicate item_id
+bad_id,Corrupt Movie ID,01-Jan-1997,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Drama,INVALID_TYPE,Non-integer item_id

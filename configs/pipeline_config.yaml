@@ -1,0 +1,68 @@
+project:
+  name: "movielens-recsys-pipeline"
+  version: "1.0.0"
+  domain: "Movie Recommendation Platform (MovieLens 100K)"
+  random_seed: 42
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  features_dir: "data/features"
+  errors_dir: "data/errors"
+  models_dir: "models"
+  reports_dir: "reports"
+
+ingestion:
+  dataset_name: "ml-100k"
+  dataset_url: "https://files.grouplens.org/datasets/movielens/ml-100k.zip"
+  force_download: false
+  inject_validation_test_records: true
+
+validation:
+  rating_min: 1.0
+  rating_max: 5.0
+  age_min: 5
+  age_max: 110
+  valid_genders: ["M", "F"]
+  min_timestamp: 852076800    # 1997-01-01 00:00:00 UTC
+  max_timestamp: 1893456000   # 2030-01-01 00:00:00 UTC
+  max_error_rate_pct: 5.0
+
+preparation:
+  split_strategy: "per_user_temporal"
+  train_ratio: 0.80
+  min_user_interactions_for_split: 5
+  default_release_year: 1995
+
+features:
+  positive_rating_threshold: 4.0
+  bayesian_smoothing_m: 25.0
+  top_k_default: 10
+
+training:
+  mlflow_tracking_uri: "sqlite:///models/mlflow.db"
+  mlflow_experiment_name: "movielens-100k-recommender"
+  popularity_model:
+    bayesian_m: 25.0
+    popularity_weight: 0.15
+  hybrid_model:
+    n_factors: 16
+    n_epochs: 20
+    reg: 18.0
+    bias_reg: 6.0
+    implicit_svd_factors: 24
+    explicit_weight: 0.15
+    implicit_weight: 0.75
+    genre_weight: 0.10
+
+evaluation:
+  k_values: [5, 10]
+  primary_k: 10
+  relevance_threshold: 4.0
+  sample_user_id: 196
+
+orchestration:
+  flow_name: "recommendation-system-data-pipeline"
+  cron_schedule: "0 2 * * *"
+  retries: 1
+  retry_delay_seconds: 5

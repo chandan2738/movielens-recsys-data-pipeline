@@ -1,0 +1,3 @@
+model,rmse,mae,evaluated_users_for_ranking,precision_at_5,recall_at_5,ndcg_at_5,coverage_at_5,diversity_at_5,precision_at_10,recall_at_10,ndcg_at_10,coverage_at_10,diversity_at_10,primary_k
+Baseline Popularity,1.0991,0.887,908,0.0718,0.0313,0.0795,0.0256,0.6833,0.065,0.0554,0.0792,0.0392,0.7127,10
+Hybrid Personalized SVD,0.9703,0.769,908,0.1482,0.0858,0.1685,0.1332,0.5743,0.1239,0.136,0.1675,0.1718,0.594,10

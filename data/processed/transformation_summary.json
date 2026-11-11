@@ -1,0 +1,12 @@
+{
+  "user_summary_rows": 943,
+  "item_popularity_rows": 1682,
+  "matrix_shape": [
+    943,
+    1682
+  ],
+  "matrix_nnz": 79619,
+  "implicit_positive_nnz": 45602,
+  "matrix_density_pct": 5.02,
+  "matrix_sparsity_pct": 94.98
+}

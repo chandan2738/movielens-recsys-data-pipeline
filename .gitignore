@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Raw downloaded archive & extracted MovieLens source directory
+data/raw/ml-100k.zip
+data/raw/ml-100k/
+
+# Local MLflow tracking SQLite store & artifact runs
+models/mlflow.db*
+models/mlruns/
+mlruns/
+mlartifacts/
+.prefect/
+

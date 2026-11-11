@@ -1,0 +1,32 @@
+# Feature Catalog
+
+Total registered features: **26** across `user` (10), `item` (10), and `interaction` (6) entities.
+
+| # | Feature Name | Entity | Data Type | Computation / Definition | Source | Reuse Scope |
+|---:|---|---|---|---|---|---|
+| 1 | `user_avg_rating` | `user` | `float64` | Mean historical rating given by user on train split | `train_interactions` | Training & Inference |
+| 2 | `user_rating_std` | `user` | `float64` | Standard deviation of user's training ratings | `train_interactions` | Training & Inference |
+| 3 | `user_activity_count` | `user` | `int64` | Total number of interactions in user's train history | `train_interactions` | Training & Inference |
+| 4 | `user_positive_rate` | `user` | `float64` | Share of user ratings >= 4.0 | `train_interactions` | Training & Inference |
+| 5 | `user_preferred_genre` | `user` | `string` | Top genre weighted by user ratings across rated items | `train_interactions + items` | Training & Inference |
+| 6 | `user_genre_entropy` | `user` | `float64` | Shannon entropy over user's rated genre distribution | `train_interactions + items` | Training & Inference |
+| 7 | `user_days_since_last_interaction` | `user` | `float64` | Days from user's last train interaction to train cutoff | `train_interactions` | Training & Inference |
+| 8 | `user_age` | `user` | `int64` | Validated user age in years | `users_clean` | Training & Inference |
+| 9 | `user_gender_code` | `user` | `int64` | Binary encoding of gender (M=1, F=0) | `users_clean` | Training & Inference |
+| 10 | `user_occupation_code` | `user` | `int64` | Deterministic integer encoding of occupation category | `users_clean` | Training & Inference |
+| 11 | `item_popularity_count` | `item` | `int64` | Total training rating count received by item | `train_interactions` | Training & Inference |
+| 12 | `item_popularity_log` | `item` | `float64` | Log-scaled popularity log(1 + item_popularity_count) | `train_interactions` | Training & Inference |
+| 13 | `item_avg_rating` | `item` | `float64` | Mean training rating received by item (prior fallback) | `train_interactions` | Training & Inference |
+| 14 | `item_bayesian_rating` | `item` | `float64` | Bayesian smoothed score (v*R + m*C)/(v+m) | `train_interactions` | Training & Inference |
+| 15 | `item_positive_rate` | `item` | `float64` | Fraction of item ratings >= 4.0 | `train_interactions` | Training & Inference |
+| 16 | `item_release_year` | `item` | `int64` | Cleaned movie release year | `items_clean` | Training & Inference |
+| 17 | `item_age_years` | `item` | `int64` | Movie age in years relative to dataset reference year (1998) | `items_clean` | Training & Inference |
+| 18 | `item_primary_genre` | `item` | `string` | Primary genre label assigned to item | `items_clean` | Training & Inference |
+| 19 | `item_genre_count` | `item` | `int64` | Number of genre tags attached to movie | `items_clean` | Training & Inference |
+| 20 | `item_days_since_last_interaction` | `item` | `float64` | Days elapsed since item's most recent train rating | `train_interactions` | Training & Inference |
+| 21 | `user_item_bias_baseline` | `interaction` | `float64` | Additive baseline global_mean + b_u + b_i clipped to [1, 5] | `user + item features` | Training & Inference |
+| 22 | `user_preferred_genre_match` | `interaction` | `float64` | Cosine affinity between user genre profile and item genres | `user_genre_profile + items` | Training & Inference |
+| 23 | `is_preferred_genre` | `interaction` | `int64` | Indicator (1/0) whether item includes user's top genre | `user + item features` | Training & Inference |
+| 24 | `interaction_recency_days` | `interaction` | `float64` | Days elapsed between interaction timestamp and train cutoff | `train_interactions` | Training Only |
+| 25 | `is_weekend_interaction` | `interaction` | `int64` | Indicator (1/0) whether interaction occurred on Sat/Sun | `train_interactions` | Training & Context |
+| 26 | `rating_deviation_from_user_mean` | `interaction` | `float64` | Observed rating minus user_avg_rating | `train_interactions` | Training Target Residual |

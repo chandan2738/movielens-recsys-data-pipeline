@@ -1,0 +1,26 @@
+{
+  "ingested_at_utc": "2026-11-11T07:14:15.325312+00:00",
+  "dataset": "ml-100k",
+  "source_url": "https://files.grouplens.org/datasets/movielens/ml-100k.zip",
+  "archive_sha256": "50d2a982c66986937beb9ffb3aa76efe955bf3d5c6b761f4e3a7cd717c6a3229",
+  "source_counts": {
+    "users": 943,
+    "items": 1682,
+    "interactions": 100000
+  },
+  "injected_audit_counts": {
+    "users": 4,
+    "items": 3,
+    "interactions": 10
+  },
+  "raw_output_counts": {
+    "users": 947,
+    "items": 1685,
+    "interactions": 100010
+  },
+  "files": {
+    "users": "data/raw/users.csv",
+    "items": "data/raw/items.csv",
+    "interactions": "data/raw/interactions.csv"
+  }
+}

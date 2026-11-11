@@ -1,0 +1,44 @@
+{
+  "flow_name": "recommendation-system-data-pipeline",
+  "cron_schedule": "0 2 * * *",
+  "executed_at_utc": "2026-11-11T07:14:19.357255+00:00",
+  "overall_status": "SUCCESS",
+  "total_duration_sec": 4.497,
+  "stages": [
+    {
+      "stage": "1. Data Ingestion",
+      "status": "COMPLETED",
+      "duration_sec": 0.468
+    },
+    {
+      "stage": "2. Data Validation & Quarantine",
+      "status": "COMPLETED",
+      "duration_sec": 0.34
+    },
+    {
+      "stage": "3. Data Preparation & Temporal Split",
+      "status": "COMPLETED",
+      "duration_sec": 0.483
+    },
+    {
+      "stage": "4. Data Transformation & Matrices",
+      "status": "COMPLETED",
+      "duration_sec": 0.183
+    },
+    {
+      "stage": "5. Feature Management & Catalog",
+      "status": "COMPLETED",
+      "duration_sec": 0.119
+    },
+    {
+      "stage": "6. Model Training & MLflow Tracking",
+      "status": "COMPLETED",
+      "duration_sec": 2.403
+    },
+    {
+      "stage": "7. Model Evaluation & Reporting",
+      "status": "COMPLETED",
+      "duration_sec": 0.471
+    }
+  ]
+}

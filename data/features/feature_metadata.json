@@ -1,0 +1,63 @@
+{
+  "feature_store_version": "1.0.0",
+  "generated_at_utc": "2026-11-11T07:14:16.462976+00:00",
+  "ref_timestamp": 893286638,
+  "ref_year": 1998,
+  "global_mean_rating": 3.580603,
+  "max_train_span_days": 214.8371,
+  "occupation_vocab": {
+    "administrator": 0,
+    "artist": 1,
+    "doctor": 2,
+    "educator": 3,
+    "engineer": 4,
+    "entertainment": 5,
+    "executive": 6,
+    "healthcare": 7,
+    "homemaker": 8,
+    "lawyer": 9,
+    "librarian": 10,
+    "marketing": 11,
+    "none": 12,
+    "other": 13,
+    "programmer": 14,
+    "retired": 15,
+    "salesman": 16,
+    "scientist": 17,
+    "student": 18,
+    "technician": 19,
+    "writer": 20
+  },
+  "genre_columns": [
+    "genre_unknown",
+    "genre_action",
+    "genre_adventure",
+    "genre_animation",
+    "genre_childrens",
+    "genre_comedy",
+    "genre_crime",
+    "genre_documentary",
+    "genre_drama",
+    "genre_fantasy",
+    "genre_film_noir",
+    "genre_horror",
+    "genre_musical",
+    "genre_mystery",
+    "genre_romance",
+    "genre_sci_fi",
+    "genre_thriller",
+    "genre_war",
+    "genre_western"
+  ],
+  "feature_counts": {
+    "user_features": 10,
+    "item_features": 10,
+    "interaction_features": 6,
+    "total_catalog_features": 26
+  },
+  "row_counts": {
+    "user_features": 943,
+    "item_features": 1682,
+    "interaction_features": 79619
+  }
+}

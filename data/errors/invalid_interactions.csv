@@ -1,0 +1,11 @@
+user_id,item_id,rating,timestamp,event_datetime,error_code,error_reason
+,50,4,881250949,1997-12-04T15:55:49+00:00,MISSING_FIELD,Null user_id/item_id/rating/timestamp
+10.0,50,,881250949,1997-12-04T15:55:49+00:00,MISSING_FIELD,Null user_id/item_id/rating/timestamp
+196.0,242,3,881250949,1997-12-04T15:55:49Z,DUPLICATE_INTERACTION,"Duplicate (user_id, item_id) interaction record"
+12.0,100,five,881250949,1997-12-04T15:55:49+00:00,INVALID_TYPE,Non-numeric user_id/item_id/rating/timestamp
+15.0,120,0,881250949,1997-12-04T15:55:49+00:00,INVALID_RATING,"Rating outside [1.0, 5.0]"
+18.0,125,6,881250949,1997-12-04T15:55:49+00:00,INVALID_RATING,"Rating outside [1.0, 5.0]"
+20.0,130,4,-100,invalid,INVALID_TIMESTAMP,"Timestamp outside [852076800, 1893456000]"
+22.0,140,5,4102444800,2100-01-01T00:00:00+00:00,INVALID_TIMESTAMP,"Timestamp outside [852076800, 1893456000]"
+99999.0,150,4,881250949,1997-12-04T15:55:49+00:00,REFERENTIAL_INTEGRITY,Orphan user_id or item_id missing from master tables
+25.0,88888,3,881250949,1997-12-04T15:55:49+00:00,REFERENTIAL_INTEGRITY,Orphan user_id or item_id missing from master tables
